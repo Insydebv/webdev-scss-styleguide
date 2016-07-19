@@ -12,9 +12,7 @@ linters:
 
   BemDepth:
     enabled: true
-
-  DeclarationOrder:
-    enabled: false
+    max_elements: 1
 
   ExtendDirective:
     enabled: true
@@ -22,9 +20,6 @@ linters:
   Indentation:
       character: tab
       width: 1
-
-  LeadingZero:
-    enabled: false
 
   NameFormat:
     enabled: true
@@ -37,7 +32,7 @@ linters:
     enabled: false
 
   QualifyingElement:
-    enabled: false
+    enabled: true
 
   SelectorFormat:
     enabled: true
@@ -49,6 +44,13 @@ linters:
     enabled: true
     allow_single_line_rule_sets: false
 
+  SpaceAfterComma:
+    enabled: true
+    style: no_space
+
   StringQuotes:
     enabled: true
     style: double_quotes
+
+  TrailingZero:
+    enabled: true
