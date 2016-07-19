@@ -4,29 +4,31 @@
 
 ## Table of Contents
 
-  1. [Terminology](#terminology)
+  1. [SCSS](#scss)
+    - [Syntax](#syntax)
     - [Rule Declaration](#rule-declaration)
     - [Selectors](#selectors)
+        - [ID Selectors](#id-selectors)
     - [Properties](#properties)
-  1. [CSS](#css)
     - [Formatting](#formatting)
+    - [Variables](#variables)
     - [Comments](#comments)
-    - [OOCSS and BEM](#oocss-and-bem)
-    - [ID Selectors](#id-selectors)
+  1. [OOCSS and BEM](#oocss-and-bem)
     - [JavaScript hooks](#javascript-hooks)
     - [Border](#border)
-  1. [Sass](#sass)
-    - [Syntax](#syntax)
     - [Ordering](#ordering-of-property-declarations)
     - [Variables](#variables)
     - [Mixins](#mixins)
     - [Extend directive](#extend-directive)
     - [Nested selectors](#nested-selectors)
-  1. [Translation](#translation)
 
-## CSS
+## SCSS
 
-### Rule declaration
+### Syntax
+
+* Use the `.scss` syntax, never the original `.sass` syntax
+
+## Rule declaration
 A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here's an example:
 
 * Put blank lines between rule declarations
@@ -42,10 +44,10 @@ A “rule declaration” is the name given to a selector (or a group of selector
 }
 ```
 
-### Selectors
+## Selectors
 In a rule declaration, “selectors” are the bits that determine which elements in the DOM tree will be styled by the defined properties. Selectors can match HTML elements, as well as an element's class, ID, or any of its attributes. Here are some examples of selectors:
 * Prefer dashes over camelCasing in class names.
-  - Underscores and are okay if you are using BEM (see [OOCSS and BEM](#oocss-and-bem) below).
+  - Underscores and are okay if you are using BEM (see [OOCSS and BEM](#bem) below).
 * Do not use ID selectors
 * When using multiple selectors in a rule declaration, give each selector its own line.
 * Avoid qualifying elements in selectors e.g. no ul.list but just .list.
@@ -63,73 +65,55 @@ In a rule declaration, “selectors” are the bits that determine which element
 }
 ```
 
-### Properties
+### ID selectors
+**DONT USE THEM!** You and only you will be held responsible for doing it anyway.
+
+### Body classes
+Use of body classes should be prevented if at all possible.
+* When using a body class is inevitable, apply it like a modifier e.g.
+```scss
+.page--pagetype {
+	/* ... */
+}
+```
+
+## Properties
 Properties are what give the selected elements of a rule declaration their style. Properties are key-value pairs, and a rule declaration can contain one or more property declarations. Property declarations look like this:
 
 * In properties, put a space after, but not before, the `:` character.
 * Don't use color names or hex values directly in rule declarations. Instead use variables ($primary-color) where possible.
-* Don't add vendor prefixes, these will be auto added to the generated CSS by [Autoprefixer](https://github.com/postcss/autoprefixer).
-* Sort properties alphabetically
+* Don't write vendor prefixes, these will be auto added to the generated CSS by [Autoprefixer](https://github.com/postcss/autoprefixer).
 * Remove trailing zeros for numeric values with a decimal point.
+* Don't add spaces after commas in rgba values.
 
-```css
+```scss
 /* bad */ {
   	color : #333;
-  	background : #f1f1f1;  	
+  	background : #f1f1f1;
+  	border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 /* good */ {
-  background: $body-bg;
-  color: $body-color;
+	background: $body-bg;
+	border-top: 1px solid rgba(0,0,0,0.5);
+	color: $body-color;
 }
 ```
 
+## Formatting
+* Use tabs for indentation.
+* Put a space before the opening brace `{` in rule declarations.
+* Put closing braces `}` of rule declarations on a new line.
+* Don't use unnecessary indentation.
 
 
-### Formatting
-* Use one tab for indentation
-* Put a space before the opening brace `{` in rule declarations
-* Put closing braces `}` of rule declarations on a new line
+## Comments
 
-### Variables
-When using Foundation variables are declared in _settings.scss. Custom variables should also be declared here, at the end of the file. Preferrably group them by BEM module.
-
-* Hyphenate variable names.
-* Don't add spaces when using rgba values.
-
-**Bad**
-
-```css
-/* bad */
-$primaryColor: rgba(0, 0, 0, 0.5);
-
-/* good */
-$primary-color: rgba(0,0,0,0.5);
-```
-
-**Good**
-
-```css
-.avatar {
-  border-radius: 50%;
-  border: 2px solid $white;
-}
-
-.one,
-.selector,
-.per-line {
-  // ...
-}
-```
-
-### Comments
-
-* Prefer line comments (`//` in Sass-land) to block comments.
+* Prefer line comments (`//`) to block comments.
 * Put comments on their own line. Avoid end-of-line comments.
-* Write detailed comments for code that isn't self-documenting:
-  - Compatibility or browser-specific hacks
+* Write detailed comments for code that isn't self-documenting e.g. compatibility or browser-specific hacks.
 
-### BEM
+## BEM
 
 **BEM**, or “Block-Element-Modifier”, is a _naming convention_ for classes in HTML and CSS. It was originally developed by Yandex with large codebases and scalability in mind, and can serve as a solid set of guidelines for implementing OOCSS.  
 Read more about BEM: [CSS Trick's BEM 101](https://css-tricks.com/bem-101/), [introduction to BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
@@ -138,7 +122,7 @@ Read more about BEM: [CSS Trick's BEM 101](https://css-tricks.com/bem-101/), [in
 * Make the the components as small as possible, so it is easy the re-use those blocks in the future.
 * Each components gets its own file in /components, preceding the filename with an underscore: _component-name.scss
 * Use only one level of bem depth (no .block__element__element--modifier).
-* Nest elements and modifiers.
+* Nest BEM elements and modifiers.
 
 ```scss
 /* _block.scss */
@@ -190,24 +174,18 @@ Use `0` instead of `none` to specify that a style has no border.
 }
 ```
 
-## Sass
-
-### Syntax
-
-* Use the `.scss` syntax, never the original `.sass` syntax
-* Order your regular CSS and `@include` declarations logically (see below)
 
 ### Ordering of property declarations
 
 1. Property declarations
 
-    List all standard property declarations, anything that isn't an `@include` or a nested selector.
+    List all standard property declarations, anything that isn't an `@include` or a nested selector. Sort properties alphabetically.
 
     ```scss
-    .btn-green {
-      background: green;
-      font-weight: bold;
-      // ...
+    .button {
+       background: $green;
+       font-weight: bold;
+       // ...
     }
     ```
 
@@ -215,39 +193,73 @@ Use `0` instead of `none` to specify that a style has no border.
 
     Grouping `@include`s at the end makes it easier to read the entire selector.
 
-    ```scss
-    .btn-green {
-      background: green;
-      font-weight: bold;
-      @include transition(background 0.5s ease);
-      // ...
-    }
-    ```
+	```scss
+       	.button {
+       	   background: $green;
+       	   font-weight: bold;
+       	   @include transition(background 0.5s ease);
+       	   // ...
+       	}
+       	```
 
 3. Nested selectors
 
     Nested selectors, _if necessary_, go last, and nothing goes after them. Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply the same guidelines as above to your nested selectors.
 
-    ```scss
-    .btn {
-      background: green;
-      font-weight: bold;
-      @include transition(background 0.5s ease);
+	```scss
+	.button {
+		background: $green;
+		font-weight: bold;
+		@include transition(background 0.5s ease);
+	
+		.icon {
+			margin-right: 10px;
+		}
+	}
+	```
 
-      .icon {
-        margin-right: 10px;
-      }
-    }
-    ```
+3. BEM selectors
 
+   BEM selectors go after any `@include`'s and before nested selectors. Modifiers come first and elements come second. Seperate with a blank line.
+
+	```scss
+	.button {
+		background: $green;
+		font-weight: bold;
+		@include transition(background 0.5s ease);
+
+		&--expanded {
+			width: 100%;
+		}
+
+		&__element {
+			float: right;
+		}
+
+		.icon {
+			margin-right: 10px;
+		}
+	}
+	```
+	
 ### Variables
+Global variables should be declared in **_settings.scss**. BEM variables should be declared at the start of the BEM component and their names should resemble that of the component.
+* Prefer dash-cased variable names (e.g. `$my-variable`) over camelCased or snake_cased variable names.
 
-Prefer dash-cased variable names (e.g. `$my-variable`) over camelCased or snake_cased variable names. It is acceptable to prefix variable names that are intended to be used only within the same file with an underscore (e.g. `$_my-variable`).
+```scss
+/* bad */
+$primaryColor: rgba(0,0,0,0.5);
+
+/* good */
+$primary-color: rgba(0,0,0,0.5);
+```
+
 
 ### Mixins
 
 Mixins should be used to DRY up your code, add clarity, or abstract complexity--in much the same way as well-named functions. Mixins that accept no arguments can be useful for this, but note that if you are not compressing your payload (e.g. gzip), this may contribute to unnecessary code duplication in the resulting styles.
 * Mixin names should be written in hyphenated lowercase.
+* Global mixins should be placed in _mixins.scss. Component-only usage mixins should be in their respective component files.
 
 ### Extend directive
 
