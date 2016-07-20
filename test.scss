@@ -1,0 +1,56 @@
+/* This file is for testing purposes only,
+   no front-enders were harmed during the creation of this file. */
+
+$black: #000;
+$black-prefer-long-hex: #000000;
+
+div.bike {
+	color : #333;
+	border-top: 1px solid rgba(0, 0, 0, 0.50);
+	background : #f1f1f1;
+	border-radius: 50%;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+}
+
+#janine
+ {
+  display: block;
+}
+
+.icon-chevron-up    { &:before { content: "\e030"; } }
+.icon-chevron-down  { &:before { content: "\e031"; } }
+
+@mixin myCoolCamelCaseMixin($i) {
+	@if($i == 2) {
+		width: $i * 2;
+	}
+	@else {
+		width: $i;
+	}
+}
+
+.sort-order {
+	@include mixin;
+	display: block;
+	color: $blue;
+
+	&--modifier {
+		color: $black;
+		border: none;
+	}
+
+	// block list with modifiers is ok
+	&--small  { width: 25%; }
+	&--medium { width: 50%; }
+	&--large  { width: 75%; }
+
+	&__element {
+		border: 0;
+		color: $yellow;
+	}
+}
+
+.js-hidden {
+	color: black;
+}

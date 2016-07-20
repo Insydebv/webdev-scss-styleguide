@@ -14,8 +14,15 @@ linters:
     enabled: true
     max_elements: 1
 
+  ElsePlacement:
+    enabled: true
+    style: new_line
+
   ExtendDirective:
     enabled: true
+
+  HexLength:
+    style: long
 
   Indentation:
       character: tab
@@ -28,9 +35,6 @@ linters:
     enabled: true
     prefix: _
 
-  PropertySortOrder:
-    enabled: false
-
   QualifyingElement:
     enabled: true
 
@@ -38,15 +42,19 @@ linters:
     enabled: true
     convention: hyphenated_BEM
     class_convention: ^(?!js-).*
-    class_convention_explanation: should not be written in the form js-*
+    class_convention_explanation: Should only be used with javascript, apply a different class for styling purposes.
 
   SingleLinePerProperty:
     enabled: true
-    allow_single_line_rule_sets: false
+    allow_single_line_rule_sets: true
 
   SpaceAfterComma:
     enabled: true
     style: no_space
+
+  SpaceBeforeBrace:
+    enabled: true
+    allow_single_line_padding : true
 
   StringQuotes:
     enabled: true
