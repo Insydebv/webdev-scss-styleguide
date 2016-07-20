@@ -1,0 +1,18 @@
+{
+  "name": "scss-styleguide",
+  "description": "*For writing well structured stylesheets.*",
+  "main": ".scss-lint.yml",
+  "authors": [
+    "Maarten van Spil <maarten@insyde.nl>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Insydebv/scss-styleguide",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
