@@ -20,7 +20,7 @@ Loosely based on the [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/cs
 	- [Vendor prefixes](#vendor-prefixes)
     - [Ordering](#ordering-of-property-declarations)
     - [Variables](#variables)
-    - [If/else](#if-else)
+    - [If/else](#ifelse)
     - [Mixins](#mixins)
     - [Extend directive](#extend-directive)
     - [Nested selectors](#nested-selectors)
