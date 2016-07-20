@@ -35,6 +35,9 @@ linters:
     enabled: true
     prefix: _
 
+  PseudoElement:
+    enabled: false
+
   QualifyingElement:
     enabled: true
 

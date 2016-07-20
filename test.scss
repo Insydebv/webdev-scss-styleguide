@@ -18,6 +18,7 @@ div.bike {
   display: block;
 }
 
+.icon-chevron-left:before { content: "\e030"; }
 .icon-chevron-up    { &:before { content: "\e030"; } }
 .icon-chevron-down  { &:before { content: "\e031"; } }
 
