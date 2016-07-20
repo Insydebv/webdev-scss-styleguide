@@ -16,7 +16,7 @@ Loosely based on the [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/cs
     - [Comments](#comments)
   1. [BEM](#bem)
   1. [SCSS](#scss)
-	- [Syntax](#syntax)
+	- [General](#general)
 	- [Vendor prefixes](#vendor-prefixes)
     - [Ordering](#ordering-of-property-declarations)
     - [Variables](#variables)
@@ -29,9 +29,10 @@ Loosely based on the [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/cs
 ## CSS
 
 ### Rule declaration
-A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties. Here's an example:
+A “rule declaration” is the name given to a selector (or a group of selectors) with an accompanying group of properties.
 
-* Put blank lines between rule declarations, mixins and functions. Single line declarations are allowed and don't new blank lines between them.
+* Put blank lines between rule declarations.
+* Single line declarations are allowed and don't need blank lines between them.
 ```css
 .listing {
 	font-size: 18px;
@@ -167,9 +168,10 @@ Read more about BEM: [CSS Trick's BEM 101](https://css-tricks.com/bem-101/), [in
 
 ## SCSS
 
-### Syntax
+### General
 
 * Use the `.scss` syntax, never the original `.sass` syntax
+* Put blank lines between rule declarations, mixins and functions. 
 
 ### Vendor prefixes
 
