@@ -1,0 +1,24 @@
+{
+  "name": "scss-styleguide",
+  "version": "1.0.0",
+  "description": "*For writing well structured stylesheets.*",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Insydebv/scss-styleguide.git"
+  },
+  "author": "Maarten van Spil <maarten@insyde.nl>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Insydebv/scss-styleguide/issues"
+  },
+  "homepage": "https://github.com/Insydebv/scss-styleguide#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-scss-lint": "^0.4.0"
+  }
+}
