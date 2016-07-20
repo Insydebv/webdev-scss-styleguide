@@ -14,7 +14,7 @@ Loosely based on the [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/cs
     - [Formatting](#formatting)
   	- [Border](#border)
     - [Comments](#comments)
-  1. [BEM](#bem)
+    - [OOCSS and BEM](#oocss-and-bem)
   1. [SCSS](#scss)
 	- [General](#general)
 	- [Vendor prefixes](#vendor-prefixes)
@@ -140,30 +140,35 @@ Use `0` instead of `none` to specify that a style has no border.
 * Put comments on their own line. Avoid end-of-line comments.
 * Write detailed comments for code that isn't self-documenting e.g. compatibility or browser-specific hacks.
 
-## BEM
+### OOCSS and BEM
 
-**BEM**, or “Block-Element-Modifier”, is a _naming convention_ for classes in HTML and CSS. It was originally developed by Yandex with large codebases and scalability in mind, and can serve as a solid set of guidelines for implementing OOCSS.  
-Read more about BEM: [CSS Trick's BEM 101](https://css-tricks.com/bem-101/), [introduction to BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
+We encourage some combination of OOCSS and BEM for these reasons:
+
+  * It helps create clear, strict relationships between CSS and HTML
+  * It helps us create reusable, composable components
+  * It allows for less nesting and lower specificity
+  * It helps in building scalable stylesheets
+
+**OOCSS**, or “Object Oriented CSS”, is an approach for writing CSS that encourages you to think about your stylesheets as a collection of “objects”: reusable, repeatable snippets that can be used independently throughout a website.
+
+  * Nicole Sullivan's [OOCSS wiki](https://github.com/stubbornella/oocss/wiki)
+  * Smashing Magazine's [Introduction to OOCSS](http://www.smashingmagazine.com/2011/12/12/an-introduction-to-object-oriented-css-oocss/)
+
+**BEM**, or “Block-Element-Modifier”, is a _naming convention_ for classes in HTML and CSS. It was originally developed by Yandex with large codebases and scalability in mind, and can serve as a solid set of guidelines for implementing OOCSS.
+
+  * CSS Trick's [BEM 101](https://css-tricks.com/bem-101/)
+  * Harry Roberts' [introduction to BEM](http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/)
 
 * Apply BEM to clearly distinguishable components (objects) e.g. don't do an entire pagefooter in one BEM instance. You can make separate components of linklists etc.
 * Make the the components as small as possible, so it is easy the re-use those blocks in the future.
-* Each components gets its own file in /components, preceding the file name with an underscore: _component-name.scss
 * Use only one level of BEM depth (no .block__element__element--modifier).
-* Nest BEM elements and modifiers.
 
-```scss
-/* _block.scss */
-.block {
-	/* ... */
-	
-	&__element {
-		/* ... */
-	}
-	
-	&--modifier {
-		/* ... */
-	}
-}
+```css
+/* block.css */
+.block { }
+.block--modifier { }
+.block__title { }
+.block__content { }
 ```
 
 ## SCSS
@@ -171,7 +176,8 @@ Read more about BEM: [CSS Trick's BEM 101](https://css-tricks.com/bem-101/), [in
 ### General
 
 * Use the `.scss` syntax, never the original `.sass` syntax
-* Put blank lines between rule declarations, mixins and functions. 
+* Put blank lines between rule declarations, mixins and functions.
+* Each Components (BEM or otherwise) gets its own file in /components, preceding the file name with an underscore: _component-name.scss
 
 ### Vendor prefixes
 
@@ -234,8 +240,7 @@ Don't write vendor prefixes, these will be auto added to the generated CSS by [A
 
 3. BEM selectors
 
-   BEM selectors go after any declarations and before nested selectors. Modifiers come first and elements come second. Separate with a blank line. Writing modifier blocks is ok.
-
+   Nest BEM elements and modifiers. BEM selectors go after any declarations and before nested selectors. Modifiers come first and elements come second. Separate with a blank line. Writing modifier blocks is ok. 
 	```scss
 	.button {
 		@include transition(background 0.5s ease);
