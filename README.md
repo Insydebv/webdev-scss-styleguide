@@ -20,7 +20,7 @@ Loosely based on the [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/cs
 	- [Vendor prefixes](#vendor-prefixes)
     - [Ordering](#ordering-of-property-declarations)
     - [Variables](#variables)
-    - [If/else](#if/else)
+    - [If/else](#if-else)
     - [Mixins](#mixins)
     - [Extend directive](#extend-directive)
     - [Nested selectors](#nested-selectors)
@@ -89,6 +89,7 @@ Properties are what give the selected elements of a rule declaration their style
 * Remove trailing zeros for numeric values with a decimal point.
 * Don't add spaces after commas in rgba values.
 * Values should be written in lowercase.
+* Properties should be sorted alphabetically.
 
 ```css
 /* bad */ {
