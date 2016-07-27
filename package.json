@@ -1,10 +1,10 @@
 {
   "name": "scss-styleguide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "*For writing well structured stylesheets.*",
-  "main": "index.js",
+  "main": ".sass-lint.yml",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp scss-lint"
   },
   "repository": {
     "type": "git",
