@@ -7,8 +7,6 @@
 # Linter Indentation, option "character"
 # Linter SpaceBeforeBrace, option "allow_single_line_padding"
 
-files:
-  include: src/styles/**/*.scss
 options:
   formatter: stylish
   merge-default-rules: false
