@@ -7,8 +7,6 @@
 # Linter Indentation, option "character"
 # Linter SpaceBeforeBrace, option "allow_single_line_padding"
 
-files:
-  include: src/styles/**/*.scss
 options:
   formatter: stylish
   merge-default-rules: false
@@ -37,7 +35,7 @@ rules:
     - convention: hyphenatedbem
   indentation:
     - 1
-    - size: 1
+    - size: 'tab'
   mixin-name-format: 1
   no-extends: 1
   no-qualifying-elements: 1
