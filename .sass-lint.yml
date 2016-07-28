@@ -48,6 +48,6 @@ rules:
     - style: double
   space-after-comma:
     - 1
-    - include: false
+    - include: true
   space-before-brace: 1
   variable-name-format: 1

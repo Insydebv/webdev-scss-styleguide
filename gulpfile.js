@@ -1,7 +1,10 @@
 var gulp = require('gulp');
-var scsslint = require('gulp-scss-lint');
+var sassLint = require('gulp-sass-lint');
 
-gulp.task('scss-lint', function() {
+gulp.task('test', function () {
 	return gulp.src('*.scss')
-		.pipe(scsslint());
+		.pipe(sassLint())
+		.pipe(sassLint.format())
+		.pipe(sassLint.failOnError())
+		;
 });
