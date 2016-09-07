@@ -1,4 +1,4 @@
-# Insyde CSS / SCSS Styleguide
+# CSS / SCSS Styleguide
 *For writing well structured stylesheets.*  
 
 Loosely based on the [Airbnb CSS / Sass Styleguide](https://github.com/airbnb/css)
@@ -87,14 +87,14 @@ Properties are what give the selected elements of a rule declaration their style
 * In properties, put a space after, but not before, the `:` character.
 * Never use color names e.g. yellow. These are for children, so use 6 number hex values instead.
 * Remove trailing zeros for numeric values with a decimal point.
-* Add spaces after commas in values.
+* Don't add spaces after commas in values.
 * Values should be written in lowercase.
 * Properties should be sorted alphabetically.
 
 ```css
 /* bad */ {
   	color : #333;
-  	border-top: 1px solid rgba(0,0,0,0.50);
+  	border-top: 1px solid rgba(0, 0, 0, 0.50);
   	background : #f1f;
   	border-radius: 50%;
 }
@@ -102,7 +102,7 @@ Properties are what give the selected elements of a rule declaration their style
 /* good */ {
 	background: #f1f1f1;
 	border-radius: 50%;
-	border-top: 1px solid rgba(0, 0, 0, 0.5);
+	border-top: 1px solid rgba(0,0,0,0.5);
 	color: #333333;
 }
 ```
@@ -196,7 +196,7 @@ Don't write vendor prefixes, these will be auto added to the generated CSS by [A
 
 1. Property declarations
 
-    List all standard property declarations, anything that isn't an `@include` or a nested selector. Sort properties alphabetically.
+    List all standard property declarations, anything that isn't an `@include` or a nested selector. Sort properties following the [Recess order](https://github.com/sasstools/sass-lint/blob/develop/lib/config/property-sort-orders/recess.yml). Use the provided RecessCSSOrder.jar (Intellij Plugin) to easily sort properties in your editor. 
 
     ```scss
     .button {
@@ -269,10 +269,10 @@ Global variables should be declared in **_settings.scss**. BEM variables should 
 
 ```scss
 /* bad */
-$primaryColor: rgba(0, 0, 0, 0.5);
+$primaryColor: rgba(0,0,0,0.5);
 
 /* good */
-$primary-color: rgba(0, 0, 0, 0.5);
+$primary-color: rgba(0,0,0,0.5);
 ```
 
 ### If/else
