@@ -1,23 +1,23 @@
 {
-  "name": "scss-styleguide",
-  "version": "1.0.1",
+  "name": "webdev-scss-styleguide",
+  "version": "1.0.0",
   "description": "*For writing well structured stylesheets.*",
   "main": ".sass-lint.yml",
   "scripts": {
-    "test": "gulp scss-lint"
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Insydebv/scss-styleguide.git"
+    "url": "git+https://github.com/Insydebv/webdev-scss-styleguide.git"
   },
   "author": "Maarten van Spil <maarten@insyde.nl>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Insydebv/scss-styleguide/issues"
+    "url": "https://github.com/Insydebv/webdev-scss-styleguide/issues"
   },
-  "homepage": "https://github.com/Insydebv/scss-styleguide#readme",
+  "homepage": "https://github.com/Insydebv/webdev-scss-styleguide#readme",
   "devDependencies": {
-    "gulp": "^3.9.1",
+    "gulp": "github:gulpjs/gulp#4.0",
     "gulp-sass-lint": "^1.2.0"
   }
 }
