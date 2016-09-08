@@ -32,9 +32,7 @@ rules:
     - 1
     - filename-extension: false
       leading-underscore: false
-  empty-line-between-blocks:
-    - 1
-    - ignore-single-line-rulesets: true
+  empty-line-between-blocks: 0
   extends-before-declarations: 0
   extends-before-mixins: 0
   final-newline:
@@ -122,7 +120,7 @@ rules:
     - include: true
   space-after-comma:
     - 1
-    - include: false
+    - include: true
   space-before-bang:
     - 1
     - include: true

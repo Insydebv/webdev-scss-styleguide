@@ -45,8 +45,8 @@ A “rule declaration” is the name given to a selector (or a group of selector
 }
 
 /* this is allowed */
-.icon-chevron-up:before { content: "\e030"; }
-.icon-chevron-down:before { content: "\e031"; }
+.icon-chevron-up:before { content: '\e030'; }
+.icon-chevron-down:before { content: '\e031'; }
 ```
 
 ### Selectors
@@ -87,14 +87,14 @@ Properties are what give the selected elements of a rule declaration their style
 * In properties, put a space after, but not before, the `:` character.
 * Never use color names e.g. yellow. These are for children, so use 6 number hex values instead.
 * Remove trailing zeros for numeric values with a decimal point.
-* Don't add spaces after commas in values.
+* Add spaces after commas.
 * Values should be written in lowercase.
 * Properties should be sorted alphabetically.
 
 ```css
 /* bad */ {
   	color : #333;
-  	border-top: 1px solid rgba(0, 0, 0, 0.50);
+  	border-top: 1px solid rgba(0,0,0,0.50);
   	background : #f1f;
   	border-radius: 50%;
 }
@@ -102,7 +102,7 @@ Properties are what give the selected elements of a rule declaration their style
 /* good */ {
 	background: #f1f1f1;
 	border-radius: 50%;
-	border-top: 1px solid rgba(0,0,0,0.5);
+	border-top: 1px solid rgba(0, 0, 0, 0.5);
 	color: #333333;
 }
 ```
@@ -221,14 +221,13 @@ Don't write vendor prefixes, these will be auto added to the generated CSS by [A
 
 3. Nested selectors
 
-    Nested selectors, _if necessary_, go last, and nothing goes after them. Add whitespace between your rule declarations and nested selectors, as well as between adjacent nested selectors. Apply the same guidelines as above to your nested selectors.
+    Nested selectors, _if necessary_, go last, and nothing goes after them. Don't add blank lines between blocks. Apply the same guidelines as above to your nested selectors.
 
 	```scss
 	.button {
 		@include transition(background 0.5s ease);
 		background: $green;
 		font-weight: bold;
-	
 		.icon {
 			margin-right: 10px;
 		}
@@ -243,19 +242,15 @@ Don't write vendor prefixes, these will be auto added to the generated CSS by [A
 		@include transition(background 0.5s ease);
 		background: $green;
 		font-weight: bold;
-
 		&--expanded {
 			width: 100%;
 		}
-	
 		&--small  { width: 25%; }
     	&--medium { width: 50%; }
     	&--large  { width: 75%; }
-
 		&__element {
 			float: right;
 		}
-
 		.icon {
 			margin-right: 10px;
 		}
@@ -272,7 +267,7 @@ Global variables should be declared in **_settings.scss**. BEM variables should 
 $primaryColor: rgba(0,0,0,0.5);
 
 /* good */
-$primary-color: rgba(0,0,0,0.5);
+$primary-color: rgba(0, 0, 0, 0.5);
 ```
 
 ### If/else
