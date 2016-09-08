@@ -196,7 +196,7 @@ Don't write vendor prefixes, these will be auto added to the generated CSS by [A
 
 1. Property declarations
 
-    List all standard property declarations, anything that isn't an `@include` or a nested selector. Sort properties following the [Recess order](https://github.com/sasstools/sass-lint/blob/develop/lib/config/property-sort-orders/recess.yml). Use the provided RecessCSSOrder.jar (Intellij Plugin) to easily sort properties in your editor. 
+    List all standard property declarations, anything that isn't an `@include` or a nested selector. Sort properties following alphabetically. 
 
     ```scss
     .button {
