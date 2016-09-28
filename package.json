@@ -1,6 +1,6 @@
 {
   "name": "webdev-scss-styleguide",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "*For writing well structured stylesheets.*",
   "main": ".sass-lint.yml",
   "scripts": {
