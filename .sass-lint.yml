@@ -16,12 +16,11 @@ options:
  formatter: stylish
  merge-default-rules: true
 rules:
+  attribute-quotes: 0
   bem-depth:
     - 1
     - max-depth: 1
-  border-zero:
-    - 1
-    - convention: zero
+  border-zero: 1
   brace-style:
     - 1
     - allow-single-line: true
@@ -38,9 +37,9 @@ rules:
   final-newline:
     - 1
     - include: true
-  force-attribute-nesting: 1
+  force-attribute-nesting: 0
   force-element-nesting: 0
-  force-pseudo-nesting: 1
+  force-pseudo-nesting: 0
   function-name-format:
     - 1
     - allow-leading-underscore: true
@@ -74,7 +73,7 @@ rules:
   no-empty-rulesets: 1
   no-extends: 1
   no-ids: 1
-  no-important: 1
+  no-important: 0
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties:
