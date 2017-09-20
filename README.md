@@ -1,3 +1,5 @@
+# Deprecated in favor of https://github.com/Insydebv/scss-styleguide/
+
 # CSS / SCSS Styleguide
 *For writing well structured stylesheets.*  
 
